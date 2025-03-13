@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background: #35424a;
+    background: #ff6f61; /* Màu sắc tươi sáng */
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
@@ -15,21 +15,23 @@ header {
 
 header h1 {
     margin: 0;
+    font-size: 2.5em;
 }
 
-nav ul {
+header nav ul {
     list-style: none;
     padding: 0;
 }
 
-nav ul li {
+header nav ul li {
     display: inline;
     margin: 0 15px;
 }
 
-nav ul li a {
+header nav ul li a {
     color: #ffffff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 section {
@@ -40,8 +42,49 @@ section {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.project {
-    margin-bottom: 15px;
+.slideshow-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+    text-align: center;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 24px;
+    text-decoration: none;
 }
 
 footer {

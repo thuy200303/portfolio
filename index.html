@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Trần Thị Thủy</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -21,32 +22,62 @@
     
     <section id="about">
         <h2>Giới thiệu</h2>
-        <p>Tôi là một nhà phát triển web đam mê công nghệ và thiết kế. Tôi muốn tạo ra những trang web đẹp và chức năng tốt.</p>
+        <p>Tôi là một nhà phát triển web tự tin, năng động và luôn ham học hỏi. Tôi yêu thích tạo ra những trang web đẹp và chức năng tốt.</p>
     </section>
 
     <section id="projects">
         <h2>Dự án</h2>
-        <div class="project">
-            <h3>Dự án 1</h3>
-            <p>Mô tả ngắn gọn về dự án 1.</p>
-        </div>
-        <div class="project">
-            <h3>Dự án 2</h3>
-            <p>Mô tả ngắn gọn về dự án 2.</p>
-        </div>
-        <div class="project">
-            <h3>Dự án 3</h3>
-            <p>Mô tả ngắn gọn về dự án 3.</p>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <h3>Dự án 1</h3>
+                <p>Mô tả ngắn gọn về dự án 1.</p>
+            </div>
+            <div class="mySlides fade">
+                <h3>Dự án 2</h3>
+                <p>Mô tả ngắn gọn về dự án 2.</p>
+            </div>
+            <div class="mySlides fade">
+                <h3>Dự án 3</h3>
+                <p>Mô tả ngắn gọn về dự án 3.</p>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
     </section>
 
     <section id="contact">
         <h2>Liên hệ</h2>
         <p>Email: <a href="mailto:tranthithuy@example.com">tranthithuy@example.com</a></p>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2025 Trần Thị Thủy. Tất cả quyền được bảo lưu.</p>
     </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex - 1].style.display = "block";  
+        }
+    </script>
 </body>
 </html>
