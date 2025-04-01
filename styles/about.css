@@ -11,60 +11,133 @@ body {
     margin: auto;
     overflow: hidden;
 }
-
+/* Tiêu đề */
 h1, h2, h3 {
-    color: #333;
-}
-
-.about-header {
+    color: #007bff;
     text-align: center;
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
-.about-content {
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 30px;
+}
+
+/* Phần thông tin cá nhân */
+/* Phần thông tin cá nhân */
+.personal-info {
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.personal-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Chia đều các mục */
+    gap: 20px; /* Khoảng cách giữa các mục */
+    justify-content: center;
+    align-items: stretch; /* Đảm bảo các khối có chiều cao bằng nhau */
+}
+
+.personal-info li {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Sắp xếp icon và nội dung theo chiều dọc */
     align-items: center;
-    margin: 20px 0;
+    justify-content: center;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 150px; /* Đặt chiều cao cố định để các khối bằng nhau */
 }
 
+.personal-info li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.personal-info li i {
+    margin-bottom: 10px; /* Tạo khoảng cách giữa icon và nội dung */
+    color: #007bff;
+    font-size: 2rem;
+    flex-shrink: 0; /* Đảm bảo icon không bị co lại */
+}
+
+.personal-info a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    word-break: break-word; /* Đảm bảo các liên kết dài không bị tràn */
+    text-align: center;
+}
+
+.personal-info a:hover {
+    color: #0056b3;
+}
+
+/* Ảnh đại diện */
 .about-content img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
     margin-bottom: 20px;
+    border: 5px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Kỹ năng */
 .skills {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .skill {
     background: #007bff;
     color: white;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.skill:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Trải nghiệm */
 .experience {
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .experience-item {
-    background: #fff;
+    background: #f9f9f9;
     border: 1px solid #ddd;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background: #333;
-    color: white;
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
