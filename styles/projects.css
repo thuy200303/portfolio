@@ -1,70 +1,145 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Inter', sans-serif; /* Sử dụng font hiện đại hơn */
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb); /* Gradient nhẹ nhàng */
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 .projects {
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px; /* Tăng padding để tạo không gian thoáng hơn */
+    max-width: 1400px; /* Giới hạn chiều rộng tối đa */
+    margin-top: 20px;
 }
 
 .projects h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 30px;
+    font-size: 3rem; /* Tăng kích thước tiêu đề */
+    color: #1f2937; /* Màu xám đậm, tinh tế */
+    margin-bottom: 40px;
+    font-weight: 700;
+    position: relative;
+    margin-top: 0px;
+}
+
+.projects h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #10b981; /* Đồng bộ màu sắc */
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Hiển thị 2 project mỗi hàng */
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* Tăng kích thước tối thiểu của mỗi item */
+    gap: 30px; /* Tăng khoảng cách giữa các item */
     justify-content: center;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    align-items: stretch; /* Đảm bảo các card có chiều cao bằng nhau */
 }
 
 .project-item {
-    background: #fff;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
+    background: #ffffff;
+    border: none; /* Loại bỏ viền cứng */
+    border-radius: 16px; /* Bo góc mềm mại hơn */
+    padding: 30px; /* Tăng padding bên trong */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Bóng đổ mềm mại */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    text-align: left; /* Chuyển sang căn trái để dễ đọc */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    opacity: 0.95;
+}
+
+.project-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #10b981; /* Thanh màu xanh ngọc ở đầu mỗi card */
+    transition: height 0.3s ease;
+}
+
+.project-item:hover::before {
+    height: 10px; /* Tăng chiều cao thanh màu khi hover */
 }
 
 .project-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Hiệu ứng phóng to nhẹ */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Bóng đổ đậm hơn */
+    opacity: 1; /* Khi hover, card sẽ trở nên rõ nét hơn */
 }
 
 .project-item h2 {
-    font-size: 1.8rem;
-    color: #007BFF;
-    margin-bottom: 15px;
+    font-size: 1.9rem;
+    color: #111827; /* Màu tiêu đề tối và rõ ràng */
+    margin-bottom: 12px;
+    font-weight: 600;
 }
 
 .project-item p {
-    font-size: 1rem;
-    color: #555;
+    font-size: 1.05rem;
+    color: #374151; /* Tăng độ tối */
     margin-bottom: 20px;
+    flex-grow: 1; /* Đảm bảo phần mô tả chiếm không gian hợp lý */
 }
 
 .project-item a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
     color: #fff;
-    background: #007BFF;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s, transform 0.3s;
-    margin: 5px;
+    background: #50dbcd; /* Màu xanh ngọc thay cho xanh dương */
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 5px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .project-item a:hover {
-    background: #0056b3;
-    transform: scale(1.05);
+    background: #059669; /* Màu xanh đậm hơn khi hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-item a:not(:last-child) {
+    margin-right: 10px; /* Khoảng cách giữa các link nếu có nhiều link */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1f2937; /* Nền footer tối màu */
+    color: #e5e7eb;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .projects h1 {
+        font-size: 2.2rem;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr; /* Một cột trên màn hình nhỏ */
+        gap: 20px;
+    }
+
+    .project-item {
+        padding: 20px;
+    }
 }
